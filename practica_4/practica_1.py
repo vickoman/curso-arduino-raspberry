@@ -1,5 +1,5 @@
 import serial
-import MySQLdb
+#import MySQLdb
 
 arduino = serial.Serial('/dev/ttyACM0', baudrate=9600, timeout=3.0)
 #Mysql connection
@@ -8,6 +8,6 @@ arduino = serial.Serial('/dev/ttyACM0', baudrate=9600, timeout=3.0)
 while True:
 	txt = arduino.readline()
 	print(txt)
-	print """--------------"""
+	print("--------------")
 
 arduino.close()

@@ -14,7 +14,7 @@ def save_data_sensor(sensor, value):
 		cursor.execute(queryinsert)
 		db.commit()
 		cursor.close()
-	    print("Se insert el valor")
+		print("Se insert el valor")
 	except:
 		db.rollback()
 		print("No se inserto el valor")

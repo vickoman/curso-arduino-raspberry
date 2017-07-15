@@ -31,6 +31,7 @@ try:
                 con.commit()                
                 print "Guardado exitoso.."
             except Exception,e:
+            	print("Error:%s"%str(e));
                 print "Error al guardar valor en ubidots"
             cursor.close()  
         else:

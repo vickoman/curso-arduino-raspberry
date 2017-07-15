@@ -6,8 +6,27 @@ arduino = serial.Serial('/dev/ttyACM0', baudrate=9600, timeout=3.0)
 #Mysql connection
 db = MySQLdb.connect(host="localhost", user="root", passwd="root!", db="data")
 
+
+def save_data_sensor(sensor, value):
+	cursor = db.cursor()
+	queryinsert = "INSERT INTO data(sensor, valor)VALUES('%s', '%s')" % (sensor, value)
+	try:
+		cursor.execute(queryinsert)
+		db.commit()
+		cursor.close()
+	    print """Se inserto con exito"""
+	except:
+		db.rollback()
+		print """No se guardo el value"""
+
 while True:
-	txt = arduino.readline()
-	print(txt)
+	#txt = arduino.readline()
+	#print(txt)
+	for c in arduino.read():
+		line.append(c)
+		if c == '\n':
+			print("Line: " + line)
+			line = []
+			break
 
 arduino.close()

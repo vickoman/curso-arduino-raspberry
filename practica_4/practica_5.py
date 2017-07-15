@@ -32,6 +32,8 @@ while True:
 		val     = txt[4:6]
 		print "Ingresando hum "+txt[4:6]
 
+	print(sensor)
+	print(val)
 	# if sensor==1 or sensor==2:
 	# 	save_data_sensor(sensor, val)
 	# else:

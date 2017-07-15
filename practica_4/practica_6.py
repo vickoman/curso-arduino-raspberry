@@ -20,6 +20,7 @@ try:
                 sensor      = reg[1]
                 valor       = reg[2]
                 print("sensor=%s valor=%s"%(sensor,valor))
+                print("id_sensor=%s sen=%s"%(id_sensor,sensor))
                 if sensor==1:               
                     variable = api.get_variable(variable_tmp)
                 else:

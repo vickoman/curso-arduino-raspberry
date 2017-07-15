@@ -5,7 +5,7 @@ from random import randint
 
 api = ApiClient("kKWPshWijlTpR1BzDbVK9YALXi48Uf")
 temperature = api.get_variable("59581dff7625423eb19351e9")
-humedad = api.get_variable("59581df87625423eb2e5514d
+humedad = api.get_variable("59581df87625423eb2e5514d")
 ")
 
 while(1):

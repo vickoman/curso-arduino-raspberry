@@ -22,22 +22,16 @@ def save_data_sensor(sensor, value):
 
 while True:	
 	txt = arduino.readline()
-	print(txt)
+	time.sleep(10)
 	if "Temp" in txt:
 		sensor  = 1
 		val     = txt[5:7]
-		print "Ingresando tmp "+val
+		save_data_sensor(sensor, val)
+
 	elif "Hum" in txt:
 		sensor  = 2
 		val     = txt[4:6]
-		print "Ingresando hum "+txt[4:6]
-
-	print(sensor)
-	print(val)
-	# if sensor==1 or sensor==2:
-	# 	save_data_sensor(sensor, val)
-	# else:
-	# 	print("No hay sensor")
+		save_data_sensor(sensor, val)	
 
 
 arduino.close()

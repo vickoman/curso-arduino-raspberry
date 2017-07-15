@@ -13,7 +13,7 @@ try:
         time.sleep(20)
         cursor = con.cursor()
         cursor.execute("SELECT id,sensor,valor FROM data WHERE enviado=0 ORDER BY fecha_registro ASC;") 
-        reg     = cursor.fetchone()
+        reg     = cursor.fetchall()
         if len(reg) != 0:
             try:
                 id_sensor   = reg[0]

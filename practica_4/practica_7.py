@@ -1,4 +1,3 @@
-#!/usr/bin/env python
 import serial
 import MySQLdb
 import time

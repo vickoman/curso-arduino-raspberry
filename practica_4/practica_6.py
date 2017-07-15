@@ -25,10 +25,10 @@ try:
                     variable = api.get_variable(variable_tmp)
                 else:
                     variable = api.get_variable(variable_hum)   
-                resultado = variable.save_value({'value': valor})
+                resultado = variable.save_value({'value': valor[0]})
                 print resultado         
                 sql = """UPDATE data SET enviado = 1 WHERE id = %s"""
-                cursor.execute(sql,(id_sensor))
+                cursor.execute(sql,(id_sensor[0]))
                 con.commit()                
                 print "Guardado exitoso.."
             except Exception,e:

@@ -8,6 +8,6 @@ arduino = serial.Serial('/dev/ttyACM0', baudrate=9600, timeout=3.0)
 
 while True:
 	txt = arduino.readline()
-	print(txt[5:6])	
+	print(txt[5:len(txt)-1])	
 
 arduino.close()

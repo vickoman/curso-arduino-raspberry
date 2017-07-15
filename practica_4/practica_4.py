@@ -12,11 +12,10 @@ tree = ET.parse('temperatura_15_07_2017_15_11_49.xml')
 root = tree.getroot() #obtengo la referencia de la raiz
 for item in root:  #obtengo los hijos desde la raiz
 	try:
-		fecha = int(time.mktime(datetime.datetime.strptime(item.attrib["tiempo"], '%d-%m-%Y %H:%M:%S').timetuple()))
-    	fecha = int(fecha * 1e3)
-    	response = temperature.save_value({"value": int(float(item.text)),
-                                       "timestamp": fecha})
-    	print("Subiendo...")
+        fecha = int(time.mktime(datetime.datetime.strptime(item.attrib["tiempo"], '%d-%m-%Y %H:%M:%S').timetuple()))
+        fecha = int(fecha * 1e3)
+        response = temperature.save_value({"value": int(float(item.text)),"timestamp": fecha})
+        print("subiendo..")
     except:
-    	pass
-    time.sleep(0.5)
+        pass
+    time.sleep(0.5)       

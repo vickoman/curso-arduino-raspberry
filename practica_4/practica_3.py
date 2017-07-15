@@ -14,10 +14,10 @@ def save_data_sensor(sensor, value):
 		cursor.execute(queryinsert)
 		db.commit()
 		cursor.close()
-	    print """Se inserto con exito"""
+	    print("Se insert el valor")
 	except:
 		db.rollback()
-		print """No se guardo el value"""
+		print("No se inserto el valor")
 
 while True:
 	#txt = arduino.readline()

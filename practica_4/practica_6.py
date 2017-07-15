@@ -26,11 +26,11 @@ try:
                     variable = api.get_variable(variable_hum)   
                 resultado = variable.save_value({'value': valor})
                 print resultado         
-                sql = """UPDATE data SET estado = 1 WHERE id = %s"""
+                sql = """UPDATE data SET enviado = 1 WHERE id = %s"""
                 cursor.execute(sql,(id_sensor))
                 con.commit()                
                 print "Guardado exitoso.."
-            except:
+            except Exception,e:
                 print "Error al guardar valor en ubidots"
             cursor.close()  
         else:

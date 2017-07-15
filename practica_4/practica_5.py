@@ -34,7 +34,7 @@ while True:
 
 	if sensor==1 or sensor==2:
 		save_data_sensor(sensor, val)
-	else
+	else:
 		print("No hay sensor")
 
 

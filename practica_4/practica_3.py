@@ -26,7 +26,7 @@ while True:
 	for c in arduino.read():
 		line.append(c)
 		if c == '\n':
-			print("Line: " + line)
+			print("Line: %s", line)
 			line = []
 			break
 

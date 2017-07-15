@@ -1,3 +1,4 @@
+#!/usr/bin/env python
 from ubidots import ApiClient
 import MySQLdb
 import httplib
@@ -30,11 +31,11 @@ try:
                 con.commit()                
                 print "Guardado exitoso.."
             except Exception,e:
-                print("Error:%s"%str(e));
+            	print("Error:%s"%str(e));
                 print "Error al guardar valor en ubidots"
             cursor.close()  
         else:
             print "error consulta\n"
 except Exception,e:
     print("Error:%s"%str(e));   
-    print "error en la conexion ubidots...\n"  
+    print "error en la conexion ubidots...\n"

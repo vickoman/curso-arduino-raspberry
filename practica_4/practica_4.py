@@ -18,4 +18,4 @@ for item in root:  #obtengo los hijos desde la raiz
 		print("subiendo..")
 	except:
 		pass
-	time.sleep(0.5)       
+	time.sleep(1)       

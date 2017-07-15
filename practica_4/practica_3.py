@@ -4,7 +4,7 @@ import MySQLdb
 
 arduino = serial.Serial('/dev/ttyACM0', baudrate=9600, timeout=3.0)
 #Mysql connection
-db = MySQLdb.connect(host="0.0.0.0", user="root", passwd="root!", db="data")
+db = MySQLdb.connect(host="localhost", user="root", passwd="root", db="data")
 
 
 def save_data_sensor(sensor, value):

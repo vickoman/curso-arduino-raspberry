@@ -20,9 +20,7 @@ def save_data_sensor(sensor, value):
 		db.rollback()
 		print("No se inserto el valor")
 
-while True:
-
-	time.sleep(10)
+while True:	
 	txt = arduino.readline()
 
 	if "Temp" in txt:
@@ -36,6 +34,8 @@ while True:
 
 	if sensor==1 or sensor==2:
 		save_data_sensor(sensor, val)
+	else
+		print("No hay sensor")
 
 
 arduino.close()

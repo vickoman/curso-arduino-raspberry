@@ -1,12 +1,11 @@
 #!/usr/bin/env python
 import serial
 import MySQLdb
+from random import randint
 
 arduino = serial.Serial('/dev/ttyACM0', baudrate=9600, timeout=3.0)
 #Mysql connection
 db = MySQLdb.connect(host="localhost", user="root", passwd="root", db="base_practica")
-
-line = []
 
 def save_data_sensor(sensor, value):
 	cursor = db.cursor()
@@ -21,13 +20,8 @@ def save_data_sensor(sensor, value):
 		print("No se inserto el valor")
 
 while True:
-	#txt = arduino.readline()
-	#print(txt)
-	for c in arduino.read():
-		line.append(c)
-		if c == '\n':
-			print("Line: %s", line)
-			line = []
-			break
+	txt = arduino.readline()
+	print(txt)
+	save_data_sensor(1, randint(0,20))
 
 arduino.close()

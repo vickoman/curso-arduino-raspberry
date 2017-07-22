@@ -14,7 +14,7 @@ logger.info('Iniciando script guardarBD')
 while True:
     try:
         con = MySQLdb.connect(host="localhost",user="root",passwd="root",db="base_practica")
-        arduino = serial.Serial('/dev/ttyACM1',baudrate=9600,timeout=3.0)
+        arduino = serial.Serial('/dev/ttyACM0',baudrate=9600,timeout=3.0)
         txt = ''
         time.sleep(10)
         while True:

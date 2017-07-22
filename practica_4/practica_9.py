@@ -13,12 +13,13 @@ from BrickPi import *   #import BrickPi.py file to use BrickPi operations
 import math
 from random import randint
 
+arduino = serial.Serial('/dev/ttyACM0',baudrate=9600,timeout=3.0)
+
 def prueba():
 	temp = randint(0,50)
 	#params = urllib.urlencode({'field1': temp, 'key':'FCPI0AH7789024OW'})		
 	headers = {"Content-type": "application/x-www-form-urlencoded","Accept": "text/plain"}
-	conn = httplib.HTTPConnection("192.168.10.50:3000")
-	arduino = serial.Serial('/dev/ttyACM0',baudrate=9600,timeout=3.0)
+	conn = httplib.HTTPConnection("192.168.10.50:3000")	
 	try:		
 		txt     = arduino.readline()		
 		if "Temp" in txt:			

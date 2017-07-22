@@ -16,7 +16,7 @@ def prueba():
 	temp = randint(0,50)
 	params = urllib.urlencode({'field1': temp, 'key':'QOPT6UV8MICZ7XZA'})		
 	headers = {"Content-type": "application/x-www-form-urlencoded","Accept": "text/plain"}
-	conn = httplib.HTTPConnection("192.168.137.167:3000")
+	conn = httplib.HTTPConnection("192.168.10.50:3000")
 	try:
 		conn.request("POST", "/update", params, headers)
 		response = conn.getresponse()

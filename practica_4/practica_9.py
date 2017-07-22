@@ -19,10 +19,8 @@ def prueba():
 	headers = {"Content-type": "application/x-www-form-urlencoded","Accept": "text/plain"}
 	conn = httplib.HTTPConnection("192.168.10.50:3000")
 	arduino = serial.Serial('/dev/ttyACM0',baudrate=9600,timeout=3.0)
-	try:
-		
-		txt     = arduino.readline()
-		print txt		
+	try:		
+		txt     = arduino.readline()		
 		if "Temp" in txt:			
 			val     = txt[5:7]		
 			conn.request("POST", "/update", {'field1': val, 'key':'QOPT6UV8MICZ7XZA'}, headers)
@@ -32,7 +30,8 @@ def prueba():
 			data = response.read()
 			conn.close()
 		else:
-			print "No contando"
+			print "No encontro temperatura"
+			print txt
 	except:
 		print "connection failed"
 

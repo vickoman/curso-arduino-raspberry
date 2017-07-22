@@ -20,20 +20,18 @@ def prueba():
 	conn = httplib.HTTPConnection("192.168.10.50:3000")
 	arduino = serial.Serial('/dev/ttyACM0',baudrate=9600,timeout=3.0)
 	try:
-		time.sleep(5)
-		txt     = arduino.readline()
-		time.sleep(5)
-
-		if "Temp" in txt:
-			sensor  = 1
-			val     = txt[5:7]
-		if sensor==1:
+		
+		txt     = arduino.readline()		
+		if "Temp" in txt:			
+			val     = txt[5:7]		
 			conn.request("POST", "/update", {'field1': val, 'key':'QOPT6UV8MICZ7XZA'}, headers)
-		response = conn.getresponse()
-		print temp
-		print response.status, response.reason
-		data = response.read()
-		conn.close()
+			response = conn.getresponse()
+			print temp
+			print response.status, response.reason
+			data = response.read()
+			conn.close()
+		else:
+			print "No contando"
 	except:
 		print "connection failed"
 

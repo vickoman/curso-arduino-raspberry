@@ -14,8 +14,7 @@ from random import randint
 
 def prueba():
 	temp = randint(0,50)
-		params = urllib.urlencode({'field1': temp, 'key':'QOPT6UV8MICZ7XZA'})     # use your API key generated in the thingspeak channels for the value of 'key'
-		# temp is the data you will be seding to the thingspeak channel for plotting the graph. You can add more than one channel and plot more graphs
+		params = urllib.urlencode({'field1': temp, 'key':'QOPT6UV8MICZ7XZA'})		
 		headers = {"Content-type": "application/x-www-form-urlencoded","Accept": "text/plain"}
 		conn = httplib.HTTPConnection("192.168.137.167:3000")
 		try:
@@ -28,7 +27,6 @@ def prueba():
 		except:
 			print "connection failed"
 
-#sleep for 16 seconds (api limit of 15 secs)
 if __name__ == "__main__":
 	while True:
 		#thermometer()

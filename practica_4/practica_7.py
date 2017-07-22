@@ -47,4 +47,3 @@ while True:
     except Exception, e:
         logger.error(str(e))
         time.sleep(10)  
-        

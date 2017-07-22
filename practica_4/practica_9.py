@@ -13,7 +13,6 @@ from BrickPi import *   #import BrickPi.py file to use BrickPi operations
 import math
 from random import randint
 
-arduino = serial.Serial('/dev/ttyACM0',baudrate=9600,timeout=3.0)
 
 def prueba():
 	temp = randint(0,50)
@@ -37,7 +36,9 @@ def prueba():
 		print "connection failed"
 
 if __name__ == "__main__":
+	arduino = serial.Serial('/dev/ttyACM0',baudrate=9600,timeout=3.0)
 	while True:
 		#thermometer()
 		prueba()
 		time.sleep(16) 
+		arduino.close()

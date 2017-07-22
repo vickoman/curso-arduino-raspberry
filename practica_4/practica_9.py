@@ -15,12 +15,12 @@ from random import randint
 
 def prueba():
 	temp = randint(0,50)
-	#params = urllib.urlencode({'field1': temp, 'key':'QOPT6UV8MICZ7XZA'})		
+	#params = urllib.urlencode({'field1': temp, 'key':'FCPI0AH7789024OW'})		
 	headers = {"Content-type": "application/x-www-form-urlencoded","Accept": "text/plain"}
 	conn = httplib.HTTPConnection("192.168.10.50:3000")
 	arduino = serial.Serial('/dev/ttyACM0',baudrate=9600,timeout=3.0)
 	try:
-		sleep(5)
+		time.sleep(5)
 		txt     = arduino.readline()
 		time.sleep(5)
 

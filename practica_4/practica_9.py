@@ -15,7 +15,7 @@ from random import randint
 
 
 def prueba():
-	temp = randint(0,50)
+	global arduino
 	#params = urllib.urlencode({'field1': temp, 'key':'FCPI0AH7789024OW'})		
 	headers = {"Content-type": "application/x-www-form-urlencoded","Accept": "text/plain"}
 	conn = httplib.HTTPConnection("192.168.10.50:3000")	

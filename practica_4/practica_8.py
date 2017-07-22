@@ -2,6 +2,7 @@ from ubidots import ApiClient
 import MySQLdb
 import httplib
 import time
+import dateutil.parser
 import logging
 
 
@@ -36,7 +37,7 @@ try:
                     variable = api.get_variable(variable_tmp)
                 else:
                     variable = api.get_variable(variable_hum)   
-                resultado = variable.save_value({'value': valor, 'timestamp': fecha_db})   
+                resultado = variable.save_value({'value': valor, 'timestamp': dateutil.parser.parse(fecha_db).timestamp()})   
                 logger.info(resultado)
                 sql = """UPDATE data SET enviado = 1 WHERE id = %s"""
                 cursor.execute(sql,(id_sensor))

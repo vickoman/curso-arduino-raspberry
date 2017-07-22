@@ -14,18 +14,18 @@ from random import randint
 
 def prueba():
 	temp = randint(0,50)
-		params = urllib.urlencode({'field1': temp, 'key':'QOPT6UV8MICZ7XZA'})		
-		headers = {"Content-type": "application/x-www-form-urlencoded","Accept": "text/plain"}
-		conn = httplib.HTTPConnection("192.168.137.167:3000")
-		try:
-			conn.request("POST", "/update", params, headers)
-			response = conn.getresponse()
-				print temp
-				print response.status, response.reason
-				data = response.read()
-				conn.close()
-		except:
-			print "connection failed"
+	params = urllib.urlencode({'field1': temp, 'key':'QOPT6UV8MICZ7XZA'})		
+	headers = {"Content-type": "application/x-www-form-urlencoded","Accept": "text/plain"}
+	conn = httplib.HTTPConnection("192.168.137.167:3000")
+	try:
+		conn.request("POST", "/update", params, headers)
+		response = conn.getresponse()
+			print temp
+			print response.status, response.reason
+			data = response.read()
+			conn.close()
+	except:
+		print "connection failed"
 
 if __name__ == "__main__":
 	while True:

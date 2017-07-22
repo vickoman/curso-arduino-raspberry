@@ -30,12 +30,13 @@ try:
                 id_sensor   = reg[0]
                 sensor      = reg[1]
                 valor       = reg[2]
+                fecha_db       = reg[4]
                 logger.info("sensor=%s valor=%s",sensor,valor)
                 if sensor==1:               
                     variable = api.get_variable(variable_tmp)
                 else:
                     variable = api.get_variable(variable_hum)   
-                resultado = variable.save_value({'value': valor})   
+                resultado = variable.save_value({'value': valor, 'timestamp': fecha_db})   
                 logger.info(resultado)
                 sql = """UPDATE data SET enviado = 1 WHERE id = %s"""
                 cursor.execute(sql,(id_sensor))

@@ -30,7 +30,7 @@ try:
                 id_sensor   = reg[0]
                 sensor      = reg[1]
                 valor       = reg[2]
-                fecha_db       = reg[4]
+                fecha_db       = reg[3]
                 logger.info("sensor=%s valor=%s",sensor,valor)
                 if sensor==1:               
                     variable = api.get_variable(variable_tmp)

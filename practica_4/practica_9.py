@@ -21,7 +21,8 @@ def prueba():
 	arduino = serial.Serial('/dev/ttyACM0',baudrate=9600,timeout=3.0)
 	try:
 		
-		txt     = arduino.readline()		
+		txt     = arduino.readline()
+		print txt		
 		if "Temp" in txt:			
 			val     = txt[5:7]		
 			conn.request("POST", "/update", {'field1': val, 'key':'QOPT6UV8MICZ7XZA'}, headers)

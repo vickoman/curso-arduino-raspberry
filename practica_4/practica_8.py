@@ -23,7 +23,7 @@ try:
     while 1:
         time.sleep(20)
         cursor = con.cursor()
-        cursor.execute("SELECT id,sensor,valor FROM data WHERE enviado=0 ORDER BY fecha_registro ASC;") 
+        cursor.execute("SELECT id,sensor,valor,fecha_registro FROM data WHERE enviado=0 ORDER BY fecha_registro ASC;") 
         reg     = cursor.fetchone()
         if len(reg) != 0:
             try:

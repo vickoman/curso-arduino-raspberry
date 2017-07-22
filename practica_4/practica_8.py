@@ -37,7 +37,7 @@ try:
                     variable = api.get_variable(variable_tmp)
                 else:
                     variable = api.get_variable(variable_hum)   
-                resultado = variable.save_value({'value': valor, 'timestamp': datetime.time(fecha_db).strftome("%s")})   
+                resultado = variable.save_value({'value': valor})   
                 logger.info(resultado)
                 sql = """UPDATE data SET enviado = 1 WHERE id = %s"""
                 cursor.execute(sql,(id_sensor))

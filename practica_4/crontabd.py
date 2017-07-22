@@ -1,6 +1,6 @@
 import time
 while True:
-	archivo = open("/var/log/piscriptlog.log", 'a')
+	archivo = open("log.txt", 'a')
 	fecha = time.strftime("%Y-%m-%d %H:%M:%S")
 	archivo.write(fecha)
 	archivo.write("\n")
